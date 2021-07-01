@@ -15,7 +15,9 @@ const {
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+  cors: "*",
+});
 
 app.use(morgan("dev"));
 
